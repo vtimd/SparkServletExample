@@ -32,9 +32,9 @@ public class HelloWorld implements SparkApplication {
                       return "Hello World!";
                   });
         
-        Spark.get("/hello/:name",
+        Spark.get("/hello/:id",
                   (Request request, Response response) -> {
-                      return  String.format("Hello, %s!", request.params(":name"));
+                      return  String.format("Input %s x 10 =", request.params(":id"));
                   });
     }
 }
