@@ -23,16 +23,16 @@ public class HelloWorld implements SparkApplication {
         
         Spark.get("/",
                   (Request request, Response response) -> {
-                      response.redirect("/currencyservice/hello");
+                      response.redirect("/currency/service");
                       return null;
             });
         
-        Spark.get("/currencyservice",
+        Spark.get("/service",
                   (Request request, Response response) -> {
                       return "Welcome to the ACME Currency Service!";
                   });
         
-        Spark.get("/currencyservice/:id",
+        Spark.get("/service/:id",
                   (Request request, Response response) -> {
                       int input;
                       input = Integer.parseInt(request.params(":id"));
