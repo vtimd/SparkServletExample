@@ -34,7 +34,11 @@ public class HelloWorld implements SparkApplication {
         
         Spark.get("/hello/:id",
                   (Request request, Response response) -> {
-                      return  String.format("Input %s x 10 =", request.params(":id"));
+                      int input;
+                      input = Integer.parseInt(request.params(":id"));
+                      int output;
+                      output = input * 10;
+                      return  String.format("Input %s x 10 =", output);
                   });
     }
 }
