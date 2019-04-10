@@ -18,6 +18,12 @@ import spark.Spark;
 import spark.servlet.SparkApplication;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.apache.log4j.{Level, Logger};    
+ 
+val logger: Logger = Logger.getLogger("My.Example.Code.Rules");
+Logger.getLogger("org.apache.spark").setLevel(Level.WARN);
+Logger.getLogger("org.apache.spark.storage.BlockManager").setLevel(Level.ERROR);
+logger.setLevel(Level.INFO);
 
 public class HelloWorld implements SparkApplication {
     @Override
@@ -36,6 +42,7 @@ public class HelloWorld implements SparkApplication {
         
         Spark.get("/service/:id",
                   (Request request, Response response) -> {
+                      logger.info("This is a test of the emergency broadcast system", throwable);
                       float input;
                       System.out.println(request.params(":id"));
                       input = Float.parseFloat(request.params(":id"));
