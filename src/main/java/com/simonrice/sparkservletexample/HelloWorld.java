@@ -5,7 +5,7 @@
  * can do whatever you want with this stuff. If we meet some day, and you think
  * this stuff is worth it, you can buy me an alcoholic beverage in return.
  *
- * Simon Rice
+ * Simon Rice - test
  * ----------------------------------------------------------------------------
  */
 
@@ -16,6 +16,8 @@ import spark.Response;
 import spark.Route;
 import spark.Spark;
 import spark.servlet.SparkApplication;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class HelloWorld implements SparkApplication {
     @Override
@@ -34,9 +36,9 @@ public class HelloWorld implements SparkApplication {
         
         Spark.get("/service/:id",
                   (Request request, Response response) -> {
-                      int input;
-                      input = Integer.parseInt(request.params(":id"));
-                      int output;
+                      float input;
+                      input = Float.parseFloat(request.params(":id"));
+                      float output;
                       output = input * 10;
                       return  String.format(" %s", output);
                   });
