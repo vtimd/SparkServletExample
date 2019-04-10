@@ -42,7 +42,7 @@ public class HelloWorld implements SparkApplication {
         
         Spark.get("/service/:id",
                   (Request request, Response response) -> {
-                      logger.info("This is a test of the emergency broadcast system", throwable);
+                      logger.info("This is a test of the emergency broadcast system");
                       float input;
                       System.out.println(request.params(":id"));
                       input = Float.parseFloat(request.params(":id"));
