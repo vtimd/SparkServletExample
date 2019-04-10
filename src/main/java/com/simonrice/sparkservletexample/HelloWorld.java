@@ -20,7 +20,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.log4j.Logger;
  
-Logger logger = Logger.getLogger(HelloWorld);
+final static Logger logger = Logger.getLogger(HelloWorld.class);
 
 public class HelloWorld implements SparkApplication {
     @Override
