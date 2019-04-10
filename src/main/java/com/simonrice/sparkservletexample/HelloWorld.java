@@ -19,10 +19,10 @@ import spark.servlet.SparkApplication;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.log4j.Logger;
- 
-final static Logger logger = Logger.getLogger(HelloWorld.class);
 
 public class HelloWorld implements SparkApplication {
+    
+    final static Logger logger = Logger.getLogger(HelloWorld.class);
     @Override
     public void init() {
         
