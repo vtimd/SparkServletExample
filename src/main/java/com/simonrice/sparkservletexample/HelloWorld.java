@@ -21,9 +21,6 @@ import com.google.gson.GsonBuilder;
 import org.apache.log4j.Logger;
  
 val logger: Logger = Logger.getLogger("HelloWorld");
-Logger.getLogger("org.apache.spark").setLevel(Level.WARN);
-Logger.getLogger("org.apache.spark.storage.BlockManager").setLevel(Level.ERROR);
-logger.setLevel(Level.INFO);
 
 public class HelloWorld implements SparkApplication {
     @Override
