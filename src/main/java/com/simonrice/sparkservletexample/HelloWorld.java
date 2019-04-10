@@ -37,6 +37,7 @@ public class HelloWorld implements SparkApplication {
         Spark.get("/service/:id",
                   (Request request, Response response) -> {
                       float input;
+                      System.out.println(request.params(":id"));
                       input = Float.parseFloat(request.params(":id"));
                       float output;
                       output = input * 10;
